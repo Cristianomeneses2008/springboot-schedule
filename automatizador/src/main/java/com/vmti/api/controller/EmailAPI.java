@@ -25,7 +25,8 @@ public class EmailAPI {
         mail.setFrom("atendimento@vmti.net.br");
         mail.setSubject("Teste Envio de e-mail");
         mail.setText("Hello from Spring Boot Application");
-        mail.setTo("cristiano.meneses2008@gmail.com");
+        mail.setTo("flavio.firmino10@gmail.com");
+        //mail.setTo("anthony.agcp@gmail.com");
 
         try {
             mailSender.send(mail);
@@ -43,5 +44,14 @@ public class EmailAPI {
     public void reportCurrentTime() {
         System.out.println("Hora atual: " + new Date());
     }
+
+
+    @Scheduled(fixedDelay = 60000)
+    public  void  processWithDelay () throws InterruptedException {
+        System.out.println( "Processando com atraso fixo" );
+        // Simula o trabalho
+        Thread.sleep( 3000 );
+    }
+
 
 }
